@@ -7,6 +7,8 @@
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
+var path = require('path');
+var exphbs  = require('express-handlebars');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -17,9 +19,11 @@ var port = process.env.PORT || 8080;        // set our port
 
 var mustacheExpress = require('mustache-express');
 var parseString = require('xml2js').parseString;
-app.engine('mustache', mustacheExpress());
-app.set('view engine', 'mustache');
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 //XML To JSON
 //==============================================================================
@@ -43,13 +47,10 @@ app.post('/listings', function(request, response) {
 
 
 
-app.get('/listings', function(req, response) {
-	var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT';
+app.get('/hemenway', function(req, response) {
+	var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=hemenway';
 	var res = response; 
 	console.log(request.body);
-	if (req.body.query) {
-		url += req.body.query + "&city_neighborhood=" + req.body.city_neighborhood;
-	}
 	
 	request(url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
@@ -59,10 +60,10 @@ app.get('/listings', function(req, response) {
 	    
 		parseString(body, function (err, result) {
     	
-    	console.log(result.YGLResponse.Listings[0].Listing[4]);
-    	console.log(result.YGLResponse.Listings[0].Listing[5]);
     	console.log(result.YGLResponse.Listings[0].Listing[6]);
-    	res.render('listings', { listings : result.YGLResponse.Listings[0].Listing});
+
+
+    	res.render('hemenway', { listings : result.YGLResponse.Listings[0].Listing});
 
 		});
 	  }
@@ -70,6 +71,77 @@ app.get('/listings', function(req, response) {
  	
 });
 
+app.get('/gainsborough', function(req, response) {
+	var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=gainsborough';
+	var res = response; 
+	console.log(request.body);
+	
+	request(url, function (error, response, body) {
+	  if (!error && response.statusCode == 200) {
+	   
+	    
+
+	    
+		parseString(body, function (err, result) {
+    	
+    	console.log(result.YGLResponse.Listings[0].Listing[6]);
+
+
+    	res.render('gainsborough', { listings : result.YGLResponse.Listings[0].Listing});
+
+		});
+	  }
+	});
+ 	
+});
+
+app.get('/symphony', function(req, response) {
+	var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=symphony';
+	var res = response; 
+	console.log(request.body);
+	
+	request(url, function (error, response, body) {
+	  if (!error && response.statusCode == 200) {
+	   
+	    
+
+	    
+		parseString(body, function (err, result) {
+    	
+    	console.log(result.YGLResponse.Listings[0].Listing[6]);
+
+
+    	res.render('symphony', { listings : result.YGLResponse.Listings[0].Listing});
+
+		});
+	  }
+	});
+ 	
+});
+
+app.get('/stephen', function(req, response) {
+	var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=stephen';
+	var res = response; 
+	console.log(request.body);
+	
+	request(url, function (error, response, body) {
+	  if (!error && response.statusCode == 200) {
+	   
+	    
+
+	    
+		parseString(body, function (err, result) {
+    	
+    	console.log(result.YGLResponse.Listings[0].Listing[6]);
+
+
+    	res.render('stephen', { listings : result.YGLResponse.Listings[0].Listing});
+
+		});
+	  }
+	});
+ 	
+});
 
 
 
