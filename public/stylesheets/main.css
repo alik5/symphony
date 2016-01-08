@@ -1,0 +1,107 @@
+.jumbotron {
+	background: url('../images/boston-blue.png') no-repeat center center;
+	height: 75%;
+
+}
+
+
+.placeholder a {
+	color: #000;
+	font-family: 'Montserrat', sans-serif;
+	background-color: rgba(255, 255, 255, 0.6);
+	text-align: center;
+}
+
+.color {
+	background-color: #F0F0F0; 
+}
+
+h4 {
+	text-align: left; 
+}
+
+h3 {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif; 
+	margin-top: -10px;
+}
+
+.heading {
+	font-family: 'Palanquin Dark', sans-serif;
+	font-weight: semi-bold; 
+	color: #fff;
+	
+
+}
+
+.name {
+	font-size: 1.1em; 
+	letter-spacing: 40px;
+	font-weight: normal;  
+}
+.name2 {
+	letter-spacing: 10px;
+	font-weight: normal;  
+}
+
+.tall {
+	font-size: 2em; 
+	font-weight: bold; 
+
+}
+
+.long {
+	letter-spacing: 20px;
+	font-size: 1.5em; 
+	font-weight: normal;
+}
+
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn-primary.outline:focus, .btn-primary.outline:active:focus, .btn-primary.outline.active:focus {
+    outline: 0 none;
+}
+
+
+.btn.outline {
+    background: #ffffff;
+    padding: 12px 22px;
+}
+
+.btn-primary.outline {
+    border-color: #ffffff; 
+    color: #2550b2;
+}
+ 
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    background: #506ec8;
+    border-color: #ffffff; 
+}
+ 
+.btn-primary.outline:active, .btn-primary.outline.active {
+    background: #fff;
+    box-shadow: none;
+}
+
+ul {
+	list-style: none; 
+	text-align: left; 
+}
+
+ul li {
+	margin: 15px;
+}
+
+.from-top {
+	margin-top: 12%;
+}
+
+
+
