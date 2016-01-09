@@ -30,7 +30,6 @@ h3 {
 	font-family: 'Palanquin Dark', sans-serif;
 	font-weight: semi-bold; 
 	color: #fff;
-	margin-top: 2%;
 
 }
 
@@ -71,13 +70,14 @@ h3 {
 
 
 .btn.outline {
-    background: #ffffff;
+    background: none;
     padding: 12px 22px;
+    border-width: 5px; 
 }
 
 .btn-primary.outline {
     border-color: #ffffff; 
-    color: #2550b2;
+    color: none;
 }
  
 .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
@@ -93,6 +93,7 @@ h3 {
 ul {
 	list-style: none; 
 	text-align: left; 
+	font-weight: 1.5em; 
 }
 
 ul li {
