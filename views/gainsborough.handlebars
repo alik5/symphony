@@ -1,28 +1,104 @@
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="javascripts/main.js"></script>
+
 <body>
 	<div class="container-fluid">
 		<div class="row">
 		<div class="col-sm-3 col-md-2 sidebar">
         </div>
 			<div class="col-sm-8 col-md-9 main">
-				<h1 class="page-header">Gainsborough St.</h1>
+			
+				<div class="page-header">
+					<h1 class="page-header">Gainsborough St.</h1>
+					<div class="right-align">
+					<ul>
+						<li><button type="button" class="btn btn-info-outline active">Rentals</button> | <button type="button" class="btn btn-info-outline">Sales</button></div></li> 
+					</ul>
+				</div>
+				<button class="btn" onclick="goBack()">Go Back</button>
 				<div class="row placeholders">
 					
 							{{#each listings}}
-							<div class="col-xs-6 col-sm-4 placeholder">
+							<div class="col-xs-6 col-sm-4 placeholder" data-toggle="modal" data-target="#myModal-{{ID}}" id={{ID}}>
 							{{#Photos}}
-								
-	  								<img width="400" height="400" class="img-responsive" alt="Generic placeholder thumbnail" src={{Photo}}>
-	  							
+									<img width="400" height="400" class="img-responsive listing" alt="Generic placeholder thumbnail" src={{Photo}}>
 	  						{{else}}
 	  							<img width="400" height="400" class="img-responsive" alt="Generic placeholder thumbnail" src="https://static.wixstatic.com/media/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg/v1/fill/w_1936,h_632,al_c,q_85,usm_0.66_1.00_0.01/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg">
 	  						{{/Photos}}
 						<b>{{StreetNumber}} {{StreetName}} Unit:{{Unit}}</b>
 						<p>${{Price}}</p>
 	  			    		</div>
-	  					{{/each}}
-					
+
+	  			    		<div class="modal fade listing" id="myModal-{{ID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  								<div class="modal-dialog" role="document">
+   									 <div class="modal-content">
+     									 <div class="modal-header">
+       										 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       											 <h4 class="modal-title" id="myModalLabel">CONTACT ME</h4>
+      												</div>
+      										<div class="modal-body">	
+      											<div class="/content">
+      												<form action = 'contact', name='contactus', id='contact', method='post'>
+      													
+      													
+      														
+      													
+      													<fieldset>
+      														<p><label for="name">Name:</label><br>
+      															<input name="name", type="text", value='', id='name'>
+      														</p>
+      														{{#Photos}}	
+      															<img src={{Url}}>
+      														{{/Photos}}
+      														<p><label for="Email">Email:</label><br>
+      														<input name="email", type="text", value='', id='email'>
+      														</p>
+      														<p id="identify">{{ID}}<br></p>
+      														<b>{{StreetNumber}} {{StreetName}} Unit:{{Unit}}</b>
+      														<textarea name="message", cols='40', rows='10', id='message'></textarea>
+      														</p>
+      													</fieldset>
+      		
+      	 										</div>
+            								 </div>
+      									<div class="modal-footer">
+      									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      									  <a href="javascript: submitform()"><button type="submit" value='send' id="submit" class="btn btn-primary">Send</button></a>
+     									  </div>
+  												   </form>
+   									 </div>
+ 								 </div>
+							</div>
+	  					{{/each}}				
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
+
+
+<script>
+$('.listing-modal').on('show.bs.modal', function (e) {
+  console.log('fetching photos');
+});
+
+$('.listing').on('click', function(e) {
+	console.log('go');
+	var listingId = document.getElementById('identify').innerText;
+	var url = 'http://www.yougotlistings.com/api/photos/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&' + 'listing_id=' + listingId;
+
+    var xhr = new XMLHttpRequest();
+	xhr.open("GET", url, true);
+	xhr.onreadystatechange = function() {
+ 	 if (xhr.readyState == 4) {
+    // JSON.parse does not evaluate the attacker's scripts.
+   	 var resp = JSON.parse(xhr.responseText);
+  		}
+	}
+	xhr.send();
+});
+
+function goBack() {
+    window.history.back();
+}
+</script>

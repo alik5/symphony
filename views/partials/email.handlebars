@@ -1,0 +1,41 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">CONTACT ME</h4>
+      </div>
+      <div class="modal-body">	
+      <div class="/content">
+      		<form action = 'contact', name='contactus', id='contact', method='post'>
+      			<fieldset>
+      				<p><label for="name">Name:</label><br>
+      				<input name="name", type="text", value='', id='name'>
+      				</p>
+      				<p><label for="Email">Email:</label><br>
+      				<input name="email", type="text", value='', id='email'>
+      				</p>
+      				<p><label for="message">Message:</label><br>
+      				<textarea name="message", cols='40', rows='10', id='message'></textarea>
+      				</p>
+      			</fieldset>
+      		
+      	 </div>
+             </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="javascript: submitform()"><button type="submit" value='send' id="submit" class="btn btn-primary">Send</button></a>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+function submitform()
+{
+  document.myform.submit();
+}
+</script>

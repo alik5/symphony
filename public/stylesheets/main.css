@@ -104,5 +104,9 @@ ul li {
 	margin-top: 12%;
 }
 
+.right-align ul {
+	text-align: center; 
+}
+
 
 
