@@ -85,17 +85,22 @@ $('.listing-modal').on('show.bs.modal', function (e) {
 $('.listing').on('click', function(e) {
 	console.log('go');
 	var listingId = document.getElementById('identify').innerText;
-	var url = 'http://www.yougotlistings.com/api/photos/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&' + 'listing_id=' + listingId;
+	var url = 'https://www.yougotlistings.com/api/photos/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&' + 'listing_id=' + listingId;
 
-    var xhr = new XMLHttpRequest();
-	xhr.open("GET", url, true);
-	xhr.onreadystatechange = function() {
- 	 if (xhr.readyState == 4) {
-    // JSON.parse does not evaluate the attacker's scripts.
-   	 var resp = JSON.parse(xhr.responseText);
-  		}
-	}
-	xhr.send();
+	$.ajax({
+    	url: url,
+    	type: 'GET',
+    	dataType: 'xml',
+    	success: function(res) {
+    		console.log('response:');
+    		console.log(res);
+    	},
+    	error: function(err) {
+    		console.log('error:');
+    		console.log(err);
+    	}
+    });
+
 });
 
 function goBack() {
