@@ -26,6 +26,12 @@ h3 {
 	margin-top: -10px;
 }
 
+
+.page-header {
+	
+	font-family: 'Montserrat', sans-serif; 
+}
+
 .heading {
 	font-family: 'Palanquin Dark', sans-serif;
 	font-weight: semi-bold; 
@@ -108,5 +114,21 @@ ul li {
 	text-align: center; 
 }
 
+
+.back-button {
+	text-align: right; 
+}
+
+.round img {
+	border-radius: 15px; 
+}
+
+.bordered {
+  border-style: solid;
+  border-color: #000000; 
+  border-width: 1px; 
+  padding-top: 10px; 
+  margin: 5px; 
+}
 
 

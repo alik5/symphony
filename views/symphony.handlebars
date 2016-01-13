@@ -1,30 +1,110 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
-		<div class="col-sm-3 col-md-2 sidebar">
-        </div>
+		
 			<div class="col-sm-8 col-md-9 main">
-				<h1 class="page-header">Symphony Road</h1>
-				<div class="row placeholders">
-						{{#each listings}}
-							<div class="col-xs-6 col-sm-4 placeholder">
-							{{#Photos}}
-								
-	  								<img width="400" height="400" class="img-responsive" alt="Generic placeholder thumbnail" src={{Photo}}>
-	  							
-	  						{{else}}
-	  							<img width="400" height="400" class="img-responsive" alt="Generic placeholder thumbnail" src="https://static.wixstatic.com/media/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg/v1/fill/w_1936,h_632,al_c,q_85,usm_0.66_1.00_0.01/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg">
-	  						{{/Photos}}
-						<b>{{StreetNumber}} {{StreetName}} Unit:{{Unit}}</b>
-						<p>${{Price}}</p>
-						<p>Beds: {{Beds}}</p>
-						<p>Baths: {{Baths}}</p>
-	  			    	</div>
-						
-	  					{{/each}}
+			
+				<div class="page-header">
+					<h1 class="page-header">SYMPHONY ST.</h1>
+
 					
+					<div class="right-align">
+					<ul>
+						<li><button type="button" class="btn btn-info-outline active">Rentals</button> | <button type="button" class="btn btn-info-outline">Sales</button></div></li> 
+					</ul>
+					<div class="back-button"><button class="btn" onclick="goBack()">Go Back</button></div>
+				</div>
+				
+				<div class="row placeholders">
+					
+							{{#each listings}}
+							<div class="col-xs-6 col-sm-4 placeholder" data-toggle="modal" data-target="#myModal-{{ID}}" id="{{ID}}">
+							{{#Photos}}
+								<img width="400" height="400" class="img-responsive listing round" alt="Generic placeholder thumbnail" src={{Photo}}>
+	  						{{else}}
+	  							<img width="400" height="400" class="img-responsive round" alt="Generic placeholder thumbnail" src="https://static.wixstatic.com/media/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg/v1/fill/w_1936,h_632,al_c,q_85,usm_0.66_1.00_0.01/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg"> <div class="clearfix visible-md"></div>
+	  						{{/Photos}}
+						<b>{{StreetNumber}} {{StreetName}} Unit: {{Unit}}</b>
+						<p>${{Price}}</p>
+	  			    		</div>
+
+	  			    		<div class="modal fade" id="myModal-{{ID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  								<div class="modal-dialog" role="document">
+   									 <div class="modal-content">
+     									 <div class="modal-header">
+       										 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       											 <h4 class="modal-title" id="myModalLabel">CONTACT ME</h4>
+      												</div>
+      										<div class="modal-body">	
+      											<div class="/content">
+
+      												<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+													  <!-- Indicators -->
+													  <ol class="carousel-indicators" id="indicators">
+													  </ol>
+
+													  <!-- Wrapper for slides -->
+													  <div class="carousel-inner" role="listbox" id="carousel-body">
+													  </div>
+
+													  <!-- Controls -->
+													  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+													    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+													    <span class="sr-only">Previous</span>
+													  </a>
+													  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+													    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+													    <span class="sr-only">Next</span>
+													  </a>
+													</div>
+
+      												<form action = 'contact', name='contactus', id='contact', method='post'>
+      													
+      													
+      														
+      													
+<!--       													<fieldset>
+      														<p><label for="name">Name:</label><br>
+      															<input name="name", type="text", value='', id='name'>
+      														</p>
+      														<div class="target">
+      															{{#Photos}}
+																	<img width="400" height="400" class="img-responsive" alt="Generic placeholder thumbnail" src={{Photo}}>
+	  																{{else}}
+	  																<img width="400" height="400" class="img-responsive" alt="Generic placeholder thumbnail" src="https://static.wixstatic.com/media/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg/v1/fill/w_1936,h_632,al_c,q_85,usm_0.66_1.00_0.01/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg">
+	  															{{/Photos}}	
+	  														</div>
+	  														<div class="photos">
+	  														<p>{{#each things}}</p>
+	  														{{/each}}
+	
+	  														</div>	
+																		
+	      														</p>
+      														<p><label for="Email">Email:</label><br></p>
+      														<input name="email", type="text", value='', id='email'>
+      														</p> -->
+      														<!--<p id="identify">{{ID}}<br></p> -->
+      											<!-- 			<b>{{StreetNumber}} {{StreetName}} Unit:{{Unit}}</b>
+      														<textarea name="message", cols='40', rows='10', id='message'></textarea>
+      														</p>
+      													</fieldset> -->
+      		
+      	 										</div>
+            								 </div>
+      									<div class="modal-footer">
+      									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      									  <a href="javascript: submitform()"><button type="submit" value='send' id="submit" class="btn btn-primary">Send</button></a>
+     									  </div>
+  												   </form>
+   									 </div>
+ 								 </div>
+							</div>
+	  					{{/each}}				
 				</div>
 			</div>
 		</div>
 	</div>
+
+
 </body>

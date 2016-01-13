@@ -1,33 +1,45 @@
 
-
 <body>
 	<div class="container-fluid">
 		<div class="row">
-		<div class="col-sm-3 col-md-2 sidebar">
+		<div class="col-sm-1 col-md-1 sidebar">
         </div>
-			<div class="col-sm-8 col-md-9 main">
+			<div class="col-sm-10 col-md-10">
 			
 				<div class="page-header">
-					<h1 class="page-header">Gainsborough St.</h1>
+					<h1 class="page-header">GAINSBOROUGH ST.</h1>
+
+					
 					<div class="right-align">
 					<ul>
-						<li><button type="button" class="btn btn-info-outline active">Rentals</button> | <button type="button" class="btn btn-info-outline">Sales</button></div></li> 
+						<li>
+						<button type="button" class="btn btn-info-outline active">Rentals</button> | <button type="button" class="btn btn-info-outline">
+							Sales
+						</button>
+						</li> 
 					</ul>
+					</div>
+					<div class="back-button"><button class="btn" onclick="goBack()">Go Back</button></div>
 				</div>
-				<button class="btn" onclick="goBack()">Go Back</button>
-				<div class="row placeholders">
+				</div>
+				
+				<div class="row">
+					<div class="col-md-10 col-md-offset-2">
 					
 							{{#each listings}}
-							<div class="col-xs-6 col-sm-4 placeholder" data-toggle="modal" data-target="#myModal-{{ID}}" id={{ID}}>
+							<div class="col-xs-6 col-sm-3 col-md-3 placeholder" data-toggle="modal" data-target="#myModal-{{ID}}" id="{{ID}}">
 							{{#Photos}}
-									<img width="400" height="400" class="img-responsive" id="listing" alt="Generic placeholder thumbnail" src={{Photo}}>
+								<img width="400" height="350" class="img-responsive listing" alt="Generic placeholder thumbnail" src="{{Photo}}">
 	  						{{else}}
-	  							<img width="400" height="400" class="img-responsive" alt="Generic placeholder thumbnail" src="https://static.wixstatic.com/media/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg/v1/fill/w_1936,h_632,al_c,q_85,usm_0.66_1.00_0.01/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg">
+	  						
+	  							<img width="400" height="350" class="img-responsive" alt="Generic placeholder thumbnail" src="https://static.wixstatic.com/media/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg/v1/fill/w_1936,h_632,al_c,q_85,usm_0.66_1.00_0.01/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg">
+	  					
 	  						{{/Photos}}
-						<b>{{StreetNumber}} {{StreetName}} Unit:{{Unit}}</b>
-						<p>${{Price}}</p>
-	  			    		</div>
-
+	  							<div class="clearfix visible-md"></div>
+							<b>{{StreetNumber}} {{StreetName}}<br> Unit: {{Unit}}</b>
+							<p>${{Price}}</p>
+	  			    		<div class="clearfix visible-lg"></div>
+	  			    	</div>
 	  			    		<div class="modal fade" id="myModal-{{ID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   								<div class="modal-dialog" role="document">
    									 <div class="modal-content">

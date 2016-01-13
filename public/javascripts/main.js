@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
   // var listingId;
-  $('#listing').on('click', function(e) {
+  $('.listing').on('click', function(e) {
     console.log($(e.currentTarget));
     console.log('go');
     var listingId = $(e.currentTarget).parent()[0].id;
@@ -20,7 +20,7 @@ $(document).ready(function() {
         }
 
         for (var i = 0; i < data.length; i++) {
-          console.log('called');
+
           var url = data[i].Url[0];
           var id = data[i].ID[0]
           var html1 = '',
