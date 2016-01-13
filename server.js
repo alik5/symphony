@@ -68,14 +68,12 @@ var request = require('request');
 
 
 app.get('/', function(req, res) {
-  var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=stephen&include_mls=1';
+
   request(url, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       parseString(body, function(err, result) {
 
-        res.render('listings', {
-          listings: result.YGLResponse.Listings[0].Listing[0]
-        });
+        res.render('listings');
       });
     }
   });
