@@ -125,10 +125,10 @@ ul li {
 
 .bordered {
   border-style: solid;
-  border-color: #000000; 
+  border-color: #FAFAFA; 
   border-width: 1px; 
   padding-top: 10px; 
-  margin: 5px; 
+  height: 100%;
 }
 
 
