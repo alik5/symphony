@@ -119,8 +119,10 @@ ul li {
 	text-align: right; 
 }
 
-.round img {
+.bordered img {
 	border-radius: 15px; 
+	height: 50%;
+	width: 80%;
 }
 
 .bordered {
@@ -128,7 +130,7 @@ ul li {
   border-color: #FAFAFA; 
   border-width: 1px; 
   padding-top: 10px; 
-  height: 90%;
+  height: 50%;
 }
 
 
