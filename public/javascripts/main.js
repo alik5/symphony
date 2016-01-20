@@ -1,5 +1,21 @@
 
 $(document).ready(function() {
+
+  $('.carousel').carousel({
+    interval: false
+  });
+
+  $('.carousel-control.left').click(function() {
+    $('#carousel-example-generic').carousel('prev');
+    console.log('left');
+  });
+
+  $('.carousel-control.right').click(function() {
+    $('#carousel-example-generic').carousel('next');
+    console.log('right');
+  });
+
+
   // var listingId;
   $('.listing').on('click', function(e) {
     console.log($(e.currentTarget));
@@ -11,36 +27,50 @@ $(document).ready(function() {
       data: {
         listingId: listingId
       },
-      //url: 'http://localhost:8080/sales',
-      url: 'https://mprealestate.herokuapp.com/sales',
+      url: 'http://localhost:8080/sales',
+      //url: 'https://mprealestate.herokuapp.com/sales',
       success: function(data) {
 
-        if (data.length === 0) {
-          $('#myModal-' + listingId + ' .carousel').hide();
-          return;
-        }
+        $("#myModal-" + listingId).on('shown.bs.modal', function() {
 
-        for (var i = 0; i < data.length; i++) {
-
-          var url = data[i].Url[0];
-          var id = data[i].ID[0]
-          var html1 = '',
-            html2 = '';
-          if (i === 0) {
-            html1 = "<li data-target='#carousel-example-generic' data-slide-to='" + i + "' class='active'></li>";
-            console.log('this should only happen once');
-            html2 = "<div class='item active'><img src='" + url + "' alt='photo-" + id + "'></div>"
-          } else {
-            html1 = "<li data-target='#carousel-example-generic' data-slide-to='" + i + "'></li>";
-            html2 = "<div class='item'><img src='" + url + "' alt='photo-" + id + "'></div>"
+          if (data.length === 0) {
+            $('#myModal-' + listingId + ' .carousel').hide();
+            return;
           }
 
-          $("#myModal-" + listingId + " #indicators").append(html1);
-          $("#myModal-" + listingId + " #carousel-body").append(html2);
-        }
+
+
+
+          for (var i = 0; i < data.length; i++) {
+
+            var url = data[i].Url[0];
+            var id = data[i].ID[0]
+            var html1 = '',
+              html2 = '';
+            if (i === 0) {
+              html1 = "<li data-target='#carousel-example-generic' data-slide-to='" + i + "' class='active'></li>";
+              console.log('this should only happen once');
+              html2 = "<div class='item active'><img src='" + url + "' alt='photo-" + id + "'></div>";
+
+            } else {
+              html1 = "<li data-target='#carousel-example-generic' data-slide-to='" + i + "'></li>";
+              html2 = "<div class='item'><img src='" + url + "' alt='photo-" + id + "'></div>";
+
+            }
+
+
+            $("#myModal-" + listingId + " #indicators").append(html1);
+            $("#myModal-" + listingId + " #carousel-body").append(html2);
+
+
+
+
+          }
+        });
       }
     });
   });
+
 
 
 

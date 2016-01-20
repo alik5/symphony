@@ -96,6 +96,12 @@ app.get('/hemenway', function(req, response) {
   });
 });
 
+app.get('/hemenway_sales', function(req, res) {
+
+  res.render('hemenway_sales');
+
+});
+
 app.get('/gainsborough', function(req, response) {
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=gainsborough&include_mls=1';
   var res = response;
@@ -112,7 +118,24 @@ app.get('/gainsborough', function(req, response) {
       });
     }
   });
+});
 
+app.get('/gainsborough_sales', function(req, response) {
+  var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=gainsborough&include_mls=1';
+  var res = response;
+  console.log(request.body);
+
+  request(url, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      parseString(body, function(err, result) {
+        //console.log(result.YGLResponse.Listings[0].Listing);
+        res.render('gainsborough', {
+          listings: result.YGLResponse.Listings[0].Listing
+        });
+
+      });
+    }
+  });
 });
 
 app.get('/sales', function(req, res) {
@@ -163,6 +186,23 @@ app.get('/symphony', function(req, response) {
   });
 });
 
+app.get('/symphony_sales', function(req, response) {
+  var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=symphony&include_mls=1';
+  var res = response;
+  console.log(request.body);
+
+  request(url, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      parseString(body, function(err, result) {
+        console.log(result.YGLResponse.Listings[0].Listing[6]);
+        res.render('symphony', {
+          listings: result.YGLResponse.Listings[0].Listing
+        });
+      });
+    }
+  });
+});
+
 app.get('/stephen', function(req, response) {
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=stephen&include_mls=1';
   var res = response;
@@ -182,6 +222,16 @@ app.get('/stephen', function(req, response) {
       });
     }
   });
+
+});
+
+app.get('/stephen_sales', function(req, response) {
+
+
+
+  res.render('stephen');
+
+
 
 });
 
