@@ -209,7 +209,7 @@ app.get('/stephen_sales', function(req, response) {
 
 app.get('/featured', function(req, response) {
   var key = process.env.KEY
-  var url = "https://www.yougotlistings.com/api/rentals/search.php?key=" + key + "&tags=featured"
+  var url = "https://www.yougotlistings.com/api/rentals/search.php?key=" + key + "&tags=featured";
   var res = response;
   console.log(request.body);
 
