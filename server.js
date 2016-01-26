@@ -81,7 +81,8 @@ app.get('/', function(req, res) {
 
 
 app.get('/hemenway', function(req, response) {
-  var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=hemenway&include_mls=1';
+  var key = process.env.KEY
+  var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + KEY + '&street_name=hemenway&include_mls=1';
   var res = response;
   console.log(request.body);
   request(url, function(error, response, body) {
@@ -103,7 +104,8 @@ app.get('/hemenway_sales', function(req, res) {
 });
 
 app.get('/gainsborough', function(req, response) {
-  var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&street_name=gainsborough&include_mls=1';
+  var key = process.env.KEY
+  var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + KEY + '&street_name=gainsborough&include_mls=1';
   var res = response;
   console.log(request.body);
 
