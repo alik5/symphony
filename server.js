@@ -34,6 +34,7 @@ mailer.extend(app, {
 
 });
 
+process.env['KEY'] = 'Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT';
 
 
 // configure app to use bodyParser()
