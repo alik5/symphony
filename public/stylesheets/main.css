@@ -4,16 +4,35 @@
 
 }
 
+.placeholder {
+    color: #816687;
+}
 
 .placeholder a {
-	color: #000;
 	font-family: 'Montserrat', sans-serif;
 	background-color: rgba(255, 255, 255, 0.6);
 	text-align: center;
 }
 
+a:link {
+    color: #816687;
+}
+
+a:visited {
+    color: #816687;
+}
+
+a:active {
+    color: #000;
+}
+
+
 .color {
-	background-color: #F0F0F0; 
+	background: #F0F0F0; /* fallback for old browsers */
+}
+
+.page-header h1 {
+    font-size: 3em; 
 }
 
 h4 {
@@ -111,7 +130,7 @@ ul li {
 }
 
 .right-align ul {
-	text-align: center; 
+	text-align: right; 
 }
 
 
@@ -123,6 +142,19 @@ ul li {
 	border-radius: 15px; 
 	height: 50%;
 	width: 80%;
+    box-shadow: 2px 2px 1px #888888;
+}
+
+.item img {
+    border-radius: 15px; 
+    height: 100%;
+    width: 100%; 
+    text-align: center; 
+}
+
+.desc {
+    font-family: 'Lora', serif;
+    font-size: 1.2em; 
 }
 
 .bordered {
@@ -131,6 +163,69 @@ ul li {
   border-width: 1px; 
   padding-top: 10px; 
   height: 50%;
+  box-shadow: 2px 2px 1px #F0F0F0;
 }
+
+#preloader_4 {
+    text-align: center; 
+}
+
+#preloader_4{
+    position:relative;
+}
+#preloader_4 span{
+    position:absolute;
+    width:20px;
+    height:20px;
+    background:#3498db;
+    opacity:0.5;
+border-radius:20px;
+    -animation: preloader_4 1s infinite ease-in-out;
+    -webkit-animation: preloader_4 1s infinite ease-in-out;
+    -moz-animation: preloader_4 1s infinite ease-in-out;
+ 
+}
+#preloader_4 span:nth-child(2){
+    left:20px;
+    animation-delay: .2s;
+}
+#preloader_4 span:nth-child(3){
+    left:40px;
+    animation-delay: .4s;
+}
+#preloader_4 span:nth-child(4){
+    left:60px;
+    animation-delay: .6s;
+}
+#preloader_4 span:nth-child(5){
+    left:80px;
+    animation-delay: .8s;
+}
+@keyframes preloader_4 {
+    0% {opacity: 0.3; transform:translateY(0px);    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+    50% {opacity: 1; transform: translateY(-10px); background:#f1c40f;  box-shadow: 0px 20px 3px rgba(0, 0, 0, 0.05);}
+    100%  {opacity: 0.3; transform:translateY(0px); box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+}
+
+@-webkit-keyframes preloader_4 {
+     0% {opacity: 0.3; transform:translateY(0px);    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+    50% {opacity: 1; transform: translateY(-10px); background:#f1c40f;  box-shadow: 0px 20px 3px rgba(0, 0, 0, 0.05);}
+    100%  {opacity: 0.3; transform:translateY(0px); box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+}
+
+.form-margins {
+    width: 60%;
+    padding: 10px; 
+    margin-top: 10px;
+}
+
+.input-group {
+    margin-bottom: 10px; 
+}
+
+
+
+
+
 
 

@@ -6,22 +6,23 @@
         <h4 class="modal-title" id="myModalLabel">CONTACT ME</h4>
       </div>
       <div class="modal-body">	
-      <div class="/content">
-      		<form action = 'contact', name='contactus', id='contact', method='post'>
-      			<fieldset>
-      				<p><label for="name">Name:</label><br>
-      				<input name="name", type="text", value='', id='name'>
-      				</p>
-      				<p><label for="Email">Email:</label><br>
-      				<input name="email", type="text", value='', id='email'>
-      				</p>
-      				<p><label for="message">Message:</label><br>
-      				<textarea name="message", cols='40', rows='10', id='message'></textarea>
-      				</p>
-      			</fieldset>
-      		
+        <div class="/content">
+      		<form action="contact" name="contactus" id="contact" class="form-horizontal" method="post">
+      		 <div class="form-margins">
+              <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+               <input class="form-control" type="text" placeholder="Name" id="name" name="name">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                <input class="form-control" type="text" placeholder="Email Address" id="email" name="email">
+              </div>
+              <div class="input-group">
+                <textarea class="form-control" type="text" placeholder="What do you want to know?" id="message" name="message" cols="40" rows="10"></textarea> 
+              </div>
+            </div>
       	 </div>
-             </div>
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <a href="javascript: submitform()"><button type="submit" value='send' id="submit" class="btn btn-primary">Send</button></a>
