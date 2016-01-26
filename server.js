@@ -199,12 +199,28 @@ app.get('/stephen', function(req, response) {
 });
 
 app.get('/stephen_sales', function(req, response) {
-
-
-
   res.render('stephen_sales');
+});
+
+app.get('/featured', function(req, response) {
+  var url = "https://www.yougotlistings.com/api/rentals/search.php?key=Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT&tags=featured"
+  var res = response;
+  console.log(request.body);
+
+  request(url, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      parseString(body, function(err, result) {
+
+        console.log(result.YGLResponse.Listings[0].Listing);
 
 
+        res.render('featured', {
+          listings: result.YGLResponse.Listings[0].Listing
+        });
+
+      });
+    }
+  });
 
 });
 

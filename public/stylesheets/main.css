@@ -155,15 +155,16 @@ ul li {
 .desc {
     font-family: 'Lora', serif;
     font-size: 1.2em; 
+    color: #000;
 }
 
 .bordered {
   border-style: solid;
   border-color: #FAFAFA; 
-  border-width: 1px; 
+  border: 0;
   padding-top: 10px; 
   height: 50%;
-  box-shadow: 2px 2px 1px #F0F0F0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
 #preloader_4 {
@@ -223,7 +224,13 @@ border-radius:20px;
     margin-bottom: 10px; 
 }
 
+.icn {
+    margin-top: 10px; 
+}
 
+.hidden {
+    background-color: #EEE9E9;
+}
 
 
 

@@ -12,6 +12,7 @@
 				<b class="desc">{{StreetNumber}} {{StreetName}}<br> Unit: {{Unit}}</b>
 				<p class="desc">${{Price}} |
 				{{Beds}} Beds</p>
+				<p>Available: {{AvailableDate}}</p>
 	  			 <div class="clearfix visible-lg"></div>
 	  		</div>
 	  		<div class="modal fade" id="myModal-{{ID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -19,7 +20,7 @@
    				 	<div class="modal-content">
      					<div class="modal-header">
        						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-       						<h4 class="modal-title" id="myModalLabel">CONTACT ME</h4>
+       						<h4 class="modal-title" id="myModalLabel">{{StreetNumber}} {{StreetName}}</h4>
       					</div>
       				<div class="modal-body">	
       					<div class="/content">
@@ -40,7 +41,7 @@
 											<span class="sr-only">Next</span>
 										</a>
 							</div>
-							<h4>{{StreetNumber}} {{StreeName}}</h4>
+							
       					</div>
             		</div>
       				<div class="modal-footer">
