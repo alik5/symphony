@@ -5,6 +5,10 @@
         background: url('../images/boston-blue.png') no-repeat center center;
         background-size: cover!important;
         }
+
+        .from-top {
+            margin-top: 25%;
+        }
         
     }
 
