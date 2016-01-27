@@ -4,6 +4,10 @@
 
 }
 
+.btn-primary.outline {
+    color: #ffffff;
+}
+
 .placeholder {
     color: #816687;
 }
@@ -235,6 +239,8 @@ border-radius:20px;
 .align-middle {
     text-align: center; 
 }
+
+
 
 
 
