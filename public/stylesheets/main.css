@@ -1,5 +1,5 @@
 .jumbotron {
-	background: url('../images/boston-blue.png') center center;
+	background: url('../images/boston-blue.png') no-repeat center center;
 	height: 85%;
     position: relative;
     width: 100%;
