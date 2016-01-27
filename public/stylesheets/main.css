@@ -1,27 +1,65 @@
-.jumbotron {
-	background: url('../images/boston-blue.png') no-repeat center center;
-	height: 85%;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
 
-@media only screen and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-width : 320px) {
 
-    .jumbotron { 
+       .jumbotron {
         background: url('../images/boston-blue.png') no-repeat center center;
-        height: 100%;
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+        }
+        
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+
+        .jumbotron {
+        background: url('../images/boston-blue.png') no-repeat center center;
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+        }
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+        .jumbotron {
+        background: url('../images/boston-blue.png') no-repeat center center;
+        height: 85%;
         position: relative;
         width: 100%;
         overflow: hidden;
+        }
+    
+
     }
 
-    .heading {
-        margin-top: 0;  
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+        .jumbotron {
+        background: url('../images/boston-blue.png') no-repeat center center;
+        height: 85%;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        }
+    
+
     }
-}
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    .jumbotron {
+        background: url('../images/boston-blue.png') no-repeat center center;
+        height: 85%;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        }
+    
+    }
 
 
 
