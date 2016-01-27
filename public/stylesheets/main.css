@@ -4,7 +4,24 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+}
+
+@media only screen and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .jumbotron { 
+        background: url('../images/boston-blue.png') no-repeat center center;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
     }
+
+    .heading {
+        margin-top: 40px;  
+    }
+}
 
 
 
