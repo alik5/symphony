@@ -3,10 +3,7 @@
 
        .jumbotron {
         background: url('../images/boston-blue.png') no-repeat center center;
-        height: auto;
-        width: 100%;
-        overflow: hidden;
-        margin-top: 0; 
+        background-size: cover!important;
         }
         
     }
