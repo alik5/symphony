@@ -1,23 +1,12 @@
-@media (min-width: 700px) { 
-    .jumbotron {
-	   background: url('../images/boston-blue.png') no-repeat center center;
-	   height: 75%;
+.jumbotron {
+	background: url('../images/boston-blue.png') center center;
+	height: 85%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     }
-}
 
-@media (max-width: 700px) and (orientation: landscape) { 
-    .jumbotron {
-        background: url('../images/boston-blue.png') no-repeat center center;
-        height: 50%;
-    }
- }
 
- @media (max-width: 700px) { 
-    .jumbotron {
-        background: url('../images/boston-blue.png') no-repeat center center;
-        height: 50%;
-    }
- }
 
 .btn-primary.outline {
     color: #ffffff;
