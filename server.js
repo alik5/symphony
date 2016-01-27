@@ -20,19 +20,9 @@ var hbs = exphbs.create({
 var http = require('http');
 var _ = require("underscore");
 
-mailer.extend(app, {
+var pass = process.env.PASS
 
-  from: 'no-reply@example.com',
-  host: 'smtp.gmail.com', // hostname
-  secureConnection: true, // use SSL
-  port: 465, // port for secure SMTP
-  transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
-  auth: {
-    user: 'alikfitz@gmail.com',
-    pass: ''
-  }
 
-});
 
 
 
@@ -231,12 +221,25 @@ app.get('/featured', function(req, response) {
 });
 
 
+mailer.extend(app, {
 
-app.post('/contact', function(req, res) {
+  from: "alikfitz@gmail.com",
+  host: 'smtp.gmail.com', // hostname
+  secureConnection: true, // use SSL
+  port: 465, // port for secure SMTP
+  transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
+  auth: {
+    user: 'alikfitz@gmail.com',
+    pass: pass
+  }
+});
+app.post('/contact', function(req, res, next) {
+  var otherProperty = req.body.message;
   console.log(req.body.name);
   app.mailer.send('contact', {
     to: 'alikfitz@gmail.com',
     subject: req.body.name,
+    otherProperty: otherProperty,
     pretty: true
   },
     function(err, email) {
