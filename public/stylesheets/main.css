@@ -17,9 +17,11 @@
 
         .jumbotron {
         background: url('../images/boston-blue.png') no-repeat center center;
-        height: auto;
-        width: 100%;
-        overflow: hidden;
+        background-size: cover!important;
+        }
+
+        .from-top {
+            margin-top: 25%;
         }
 
     }
