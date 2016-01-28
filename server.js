@@ -22,7 +22,7 @@ var _ = require("underscore");
 
 var pass = process.env.PASS
 
-process.env['KEY'] = 'Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT';
+
 
 
 
