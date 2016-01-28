@@ -49,15 +49,15 @@ $(document).ready(function() {
 
         });
 
+        if (!$.trim($("#myModal-" + listingId + " #carousel-body").html()).length) {
+          for (var i = 0; i < data.length; i++) {
+            var html1 = '',
+              html2 = '';
 
-        for (var i = 0; i < data.length; i++) {
-          var html1 = '',
-            html2 = '';
+            var url = data[i].Url[0];
+            var id = data[i].ID[0]
 
-          var url = data[i].Url[0];
-          var id = data[i].ID[0]
 
-          if (!$.trim($("#myModal-" + listingId + " #carousel-body").html()).length) {
             if (i === 0) {
               html1 = "<li data-target='#myModal-{{ID}}' data-slide-to='" + i + "' class='active'></li>";
               html2 = "<div class='item active'><img src='" + url + "' alt='photo-" + id + "'></div>";
