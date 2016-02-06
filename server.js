@@ -35,7 +35,7 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080; // set our port
 
-//var parseString = require('xml2js').parseString;
+var parseString = require('xml2js').parseString;
 
 
 app.engine('handlebars', exphbs({
