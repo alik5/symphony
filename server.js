@@ -26,7 +26,6 @@ var pass = process.env.PASS;
 
 
 
-
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({
@@ -66,12 +65,12 @@ app.get('/', function(req, res) {
 });
 
 
-
+process.env.KEY = 'Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT';
 
 
 
 app.get('/hemenway', function(req, response) {
-  var key = process.env.KEY
+  var key = process.env.KEY;
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + key + '&street_name=hemenway&include_mls=1';
   var res = response;
   console.log(request.body);
@@ -94,7 +93,7 @@ app.get('/hemenway_sales', function(req, res) {
 });
 
 app.get('/gainsborough', function(req, response) {
-  var key = process.env.KEY
+  var key = process.env.KEY;
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + key + '&street_name=gainsborough&include_mls=1';
   var res = response;
   console.log(request.body);
@@ -121,7 +120,7 @@ app.get('/sales', function(req, res) {
 });
 
 app.post('/sales', function(req, response) {
-  var key = process.env.KEY
+  var key = process.env.KEY;
   console.log('pressed');
   var lid = req.body.listingId;
   console.log('Listing id is ' + lid);
@@ -149,7 +148,7 @@ app.post('/sales', function(req, response) {
 
 
 app.get('/symphony', function(req, response) {
-  var key = process.env.KEY
+  var key = process.env.KEY;
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + key + '&street_name=symphony&include_mls=1';
   var res = response;
   console.log(request.body);
@@ -170,35 +169,15 @@ app.get('/symphony_sales', function(req, res) {
   res.render('symphony_sales');
 });
 
-app.get('/stephen', function(req, response) {
-  var key = process.env.KEY
-  var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + key + '&street_name=stephen&include_mls=1';
-  var res = response;
-  console.log(request.body);
 
-  request(url, function(error, response, body) {
-    if (!error && response.statusCode == 200) {
-      parseString(body, function(err, result) {
-
-        console.log(result.YGLResponse.Listings[0].Listing);
-
-
-        res.render('stephen', {
-          listings: result.YGLResponse.Listings[0].Listing
-        });
-
-      });
-    }
-  });
-
-});
 
 app.get('/stephen_sales', function(req, response) {
+  var res = response;
   res.render('stephen_sales');
 });
 
 app.get('/featured', function(req, response) {
-  var key = process.env.KEY
+  var key = process.env.KEY;
   var url = "https://www.yougotlistings.com/api/rentals/search.php?key=" + key + "&tags=featured";
   var res = response;
   console.log(request.body);
