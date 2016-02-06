@@ -20,7 +20,8 @@ var hbs = exphbs.create({
 var http = require('http');
 var _ = require("underscore");
 
-var pass = process.env.PASS
+var pass = process.env.PASS;
+
 
 
 
@@ -63,7 +64,6 @@ app.get('/', function(req, res) {
 
   res.render('listings');
 });
-
 
 
 
