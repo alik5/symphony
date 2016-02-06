@@ -65,7 +65,6 @@ app.get('/', function(req, res) {
 });
 
 
-process.env.KEY = 'Z6x3y2AYQIVNjFkJ1C8alfcMGEtzuKpgLHn5vRrT';
 
 
 
@@ -157,6 +156,7 @@ app.get('/symphony', function(req, response) {
   request(url, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       parseString(body, function(err, result) {
+
         console.log(result.YGLResponse.Listings[0].Listing[6]);
         res.render('symphony', {
           listings: result.YGLResponse.Listings[0].Listing
@@ -176,16 +176,18 @@ app.get('/stephen', function(req, response) {
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + key + '&street_name=stephen&include_mls=1';
   var res = response;
   console.log(request.body);
-  console.log('pre errror');
+
   request(url, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       parseString(body, function(err, result) {
-        console.log(result.YGLResponse.Listings[0].Listing);
-
-
-        res.render('stephen', {
-          listings: result.YGLResponse.Listings[0].Listing
-        });
+        if (result.YGLResponse.Total != 0 && result.YGLResponse.Total !== undefined) {
+          console.log(result.YGLResponse.Listings[0].Listing[6]);
+          res.render('symphony', {
+            listings: result.YGLResponse.Listings[0].Listing
+          });
+        } else {
+          res.render('symphony_sales');
+        }
       });
     }
   });
@@ -218,6 +220,7 @@ app.get('/featured', function(req, response) {
   });
 
 });
+
 
 
 mailer.extend(app, {
