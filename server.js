@@ -186,7 +186,7 @@ app.get('/stephen', function(req, response) {
             listings: result.YGLResponse.Listings[0].Listing
           });
         } else {
-          res.render('symphony_sales');
+          res.render('none_avail');
         }
       });
     }
