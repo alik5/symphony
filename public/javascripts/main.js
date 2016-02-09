@@ -28,8 +28,9 @@ $(document).ready(function() {
       data: {
         listingId: listingId
       },
-      //url: 'http://localhost:8080/sales',
+      url: 'http://localhost:8080/sales',
       url: 'https://mprealestate.herokuapp.com/sales',
+      url: 'https://hemenwayst.com/sales',
       success: function(data) {
 
 
