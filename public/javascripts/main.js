@@ -32,8 +32,8 @@ $(document).ready(function() {
       url: 'https://mprealestate.herokuapp.com/sales',
       url: 'https://www.hemenwayst.com/sales',
       url: 'https://www.symphonyroad.com/sales',
-      url: 'https://www.gainsboroughstreet.com',
-      url: 'https://www.saintstephenstreet.com',
+      url: 'https://www.gainsboroughstreet.com/sales',
+      url: 'https://www.saintstephenstreet.com/sales',
       success: function(data) {
 
 
