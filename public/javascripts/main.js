@@ -28,9 +28,10 @@ $(document).ready(function() {
       data: {
         listingId: listingId
       },
-      url: 'http://localhost:8080/sales',
+      //url: 'http://localhost:8080/sales',
       url: 'https://mprealestate.herokuapp.com/sales',
       url: 'https://www.hemenwayst.com/sales',
+      url: 'https://www.symphonyroad.com/sales',
       success: function(data) {
 
 
