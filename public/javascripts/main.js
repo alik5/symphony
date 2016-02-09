@@ -30,7 +30,7 @@ $(document).ready(function() {
       },
       url: 'http://localhost:8080/sales',
       url: 'https://mprealestate.herokuapp.com/sales',
-      url: 'https://hemenwayst.com/sales',
+      url: 'https://www.hemenwayst.com/sales',
       success: function(data) {
 
 
