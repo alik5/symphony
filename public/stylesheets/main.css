@@ -75,6 +75,10 @@
     color: #ffffff;
 }
 
+.left {
+    text-align: left; 
+}
+
 .placeholder {
     color: #816687;
 }
