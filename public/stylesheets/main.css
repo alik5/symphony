@@ -109,9 +109,10 @@ a:active {
  
 }
 
-h4 {
-	text-align: left; 
+.page-header h4 {
+    text-align: center; 
 }
+
 
 h3 {
 	text-align: center;
@@ -326,7 +327,6 @@ border-radius:20px;
         background: url('../images/Basics.png') no-repeat center center;
         background-size: cover!important;
         }
-
 
 
 

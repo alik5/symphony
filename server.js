@@ -15,7 +15,15 @@ var exphbs = require('express-handlebars');
 var hbs = exphbs.create({
   partialsDir: [
     'views/partials/'
-  ]
+  ],
+  helpers: {
+    decimal: function() {
+      return 'FOO!';
+    },
+    bar: function() {
+      return 'BAR!';
+    }
+  }
 });
 var http = require('http');
 var _ = require("underscore");
@@ -44,7 +52,6 @@ app.set('view engine', 'handlebars');
 
 
 
-
 app.use(express.static(path.join(__dirname, 'public')));
 //XML To JSON
 //==============================================================================
@@ -64,9 +71,6 @@ app.get('/', function(req, res) {
 });
 
 
-
-
-
 app.get('/hemenway', function(req, response) {
   var key = process.env.KEY;
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + key + '&street_name=hemenway&include_mls=1';
@@ -79,6 +83,14 @@ app.get('/hemenway', function(req, response) {
         if (result.YGLResponse.Total != 0) {
           console.log(result.YGLResponse.Listings[0].Listing[6]);
           res.render('hemenway', {
+            helpers: {
+              decimal: function(Beds, Baths) {
+
+                return Math.round(Beds);
+                return Math.round(Baths);
+
+              }
+            },
             listings: result.YGLResponse.Listings[0].Listing
           });
         } else {
@@ -108,6 +120,14 @@ app.get('/gainsborough', function(req, response) {
         if (result.YGLResponse.Total != 0 && result.YGLResponse.Total !== undefined) {
           console.log(result.YGLResponse.Listings[0].Listing[6]);
           res.render('gainsborough', {
+            helpers: {
+              decimal: function(Beds, Baths) {
+
+                return Math.round(Beds);
+                return Math.round(Baths);
+
+              }
+            },
             listings: result.YGLResponse.Listings[0].Listing
           });
         } else {
@@ -167,6 +187,14 @@ app.get('/symphony', function(req, response) {
         if (result.YGLResponse.Total != 0 && result.YGLResponse.Total !== undefined) {
           console.log(result.YGLResponse.Listings[0].Listing[6]);
           res.render('symphony', {
+            helpers: {
+              decimal: function(Beds, Baths) {
+
+                return Math.round(Beds);
+                return Math.round(Baths);
+
+              }
+            },
             listings: result.YGLResponse.Listings[0].Listing
           });
         } else {
@@ -194,6 +222,14 @@ app.get('/stephen', function(req, response) {
         if (result.YGLResponse.Total != 0 && result.YGLResponse.Total !== undefined) {
           console.log(result.YGLResponse.Listings[0].Listing[6]);
           res.render('symphony', {
+            helpers: {
+              decimal: function(Beds, Baths) {
+
+                return Math.round(Beds);
+                return Math.round(Baths);
+
+              }
+            },
             listings: result.YGLResponse.Listings[0].Listing
           });
         } else {

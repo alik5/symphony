@@ -1,4 +1,7 @@
+
 $(window).load(function() {
+
+
   $('#preloader_4')
     .hide()
     .ajaxStart(function() {
