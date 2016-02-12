@@ -239,7 +239,7 @@ app.get('/stephen_sales', function(req, response) {
 
 app.get('/featured', function(req, response) {
   var key = process.env.KEY;
-  var url = "https://www.yougotlistings.com/api/rentals/search.php?key=" + key + "&tags=featured";
+  var url = "https://www.yougotlistings.com/api/rentals/search.php?&key=" + key + "&group_id=INT&tags=exclusive";
   var res = response;
   console.log(request.body);
 
@@ -251,9 +251,16 @@ app.get('/featured', function(req, response) {
 
 
         res.render('featured', {
+          helpers: {
+            decimal: function(Beds, Baths) {
+
+              return Math.round(Beds);
+              return Math.round(Baths * 2) / 2;
+
+            }
+          },
           listings: result.YGLResponse.Listings[0].Listing
         });
-
       });
     }
   });
