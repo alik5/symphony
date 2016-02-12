@@ -91,9 +91,11 @@ $(document).ready(function() {
 
 
 
-  // var listingId;
-  $('.listing').on('click', function(e) {
 
+  // var listingId;
+  $('.listing').on('click', function(e, urlAddress) {
+    var urlAddress = window.location.protocol + "//" + window.location.host + "/";
+    console.log(urlAddress);
     var listingId = $(e.currentTarget).parent()[0].id;
     var url = console.log(listingId);
     $.ajax({
@@ -101,11 +103,7 @@ $(document).ready(function() {
       data: {
         listingId: listingId
       },
-      url: 'http://localhost:8080/',
-      url: 'https://mprealestate.herokuapp.com/',
-      url: 'http://www.hemenwayst.com/',
-      url: 'http://www.symphonyroad.com/',
-      url: 'http://www.gainsboroughstreet.com/',
+      url: urlAddress,
       //url: 'http://www.saintstephenstreet.com/',
       success: function(data) {
 
