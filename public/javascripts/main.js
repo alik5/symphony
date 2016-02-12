@@ -104,9 +104,9 @@ $(document).ready(function() {
       url: 'http://localhost:8080/',
       url: 'https://mprealestate.herokuapp.com/',
       url: 'http://www.hemenwayst.com/',
-      //url: 'http://www.symphonyroad.com/',
-      //url: 'http://www.gainsboroughstreet.com/',
-      //url: 'http://www.saintstephenstreet.com/',
+      url: 'http://www.symphonyroad.com/',
+      url: 'http://www.gainsboroughstreet.com/',
+      url: 'http://www.saintstephenstreet.com/',
       success: function(data) {
 
 
