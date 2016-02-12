@@ -15,15 +15,7 @@ var exphbs = require('express-handlebars');
 var hbs = exphbs.create({
   partialsDir: [
     'views/partials/'
-  ],
-  helpers: {
-    decimal: function() {
-      return 'FOO!';
-    },
-    bar: function() {
-      return 'BAR!';
-    }
-  }
+  ]
 });
 var http = require('http');
 var _ = require("underscore");
@@ -87,7 +79,7 @@ app.get('/hemenway', function(req, response) {
               decimal: function(Beds, Baths) {
 
                 return Math.round(Beds);
-                return Math.round(Baths);
+                return Math.round(Baths * 2) / 2;
 
               }
             },
@@ -124,7 +116,7 @@ app.get('/gainsborough', function(req, response) {
               decimal: function(Beds, Baths) {
 
                 return Math.round(Beds);
-                return Math.round(Baths);
+                return Math.round(Baths * 2) / 2;
 
               }
             },
@@ -147,7 +139,7 @@ app.get('/sales', function(req, res) {
   res.render('sales');
 });
 
-app.post('/sales', function(req, response) {
+app.post('/', function(req, response) {
   var key = process.env.KEY;
   console.log('pressed');
   var lid = req.body.listingId;
@@ -191,7 +183,7 @@ app.get('/symphony', function(req, response) {
               decimal: function(Beds, Baths) {
 
                 return Math.round(Beds);
-                return Math.round(Baths);
+                return Math.round(Baths * 2) / 2;
 
               }
             },
@@ -226,7 +218,7 @@ app.get('/stephen', function(req, response) {
               decimal: function(Beds, Baths) {
 
                 return Math.round(Beds);
-                return Math.round(Baths);
+                return Math.round(Baths * 2) / 2;
 
               }
             },

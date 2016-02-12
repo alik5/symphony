@@ -14,7 +14,79 @@ $(document).ready(function() {
   });
 
 
+  $('.about').hide();
+  $('.more').addClass('active');
 
+  $('.more').click(function() {
+    if ($('.more').hasClass("active")) {
+      $('.more').text(function(i, text) {
+        $('.about').addClass('magictime spaceInUp').show();
+        $(this).removeClass("active");
+        $('.more').text("Less About Hemenway");
+      })
+    } else {
+      $(this).text(function(i, text) {
+
+        $('.about').addClass('magictime spaceInOut').hide();
+        $('.more').addClass("active");
+        $('.more').text("More About Hemenway");
+      })
+    }
+  });
+
+  $('.more-g').addClass('active');
+
+  $('.more-g').click(function() {
+    if ($('.more-g').hasClass("active")) {
+      $('.more-g').text(function(i, text) {
+        $('.about').addClass('magictime swashIn').show();
+        $(this).removeClass("active");
+        $('.more-g').text("Less About Gainsborough");
+      })
+    } else {
+      $(this).text(function(i, text) {
+        $('.more-g').text("More About Gainsborough");
+        $('.about').addClass('magictime swashOut').hide()
+        $('.more-g').addClass("active");
+      })
+    }
+  });
+
+  $('.more-s').addClass('active');
+
+  $('.more-s').click(function() {
+    if ($('.more-s').hasClass("active")) {
+      $('.more-s').text(function(i, text) {
+        $('.about').addClass('magictime swashIn').show();
+        $(this).removeClass("active");
+        $('.more-s').text("Less About Symphony");
+      })
+    } else {
+      $(this).text(function(i, text) {
+        $('.more-s').text("More About Symphony");
+        $('.about').addClass('magictime swashOut').hide()
+        $('.more-s').addClass("active");
+      })
+    }
+  });
+
+  $('.more-st').addClass('active');
+
+  $('.more-st').click(function() {
+    if ($('.more-st').hasClass("active")) {
+      $('.more-st').text(function(i, text) {
+        $('.about').addClass('magictime swashIn').show();
+        $(this).removeClass("active");
+        $('.more-st').text("Less About Saint Stephen");
+      })
+    } else {
+      $(this).text(function(i, text) {
+        $('.more-st').text("More About Saint Stephen");
+        $('.about').addClass('magictime swashOut').hide()
+        $('.more-st').addClass("active");
+      })
+    }
+  });
 
 
 
@@ -29,12 +101,12 @@ $(document).ready(function() {
       data: {
         listingId: listingId
       },
-      url: 'http://localhost:8080/sales',
-      url: 'https://mprealestate.herokuapp.com/sales',
-      url: 'https://www.hemenwayst.com/sales',
-      url: 'https://www.symphonyroad.com/sales',
-      url: 'https://www.gainsboroughstreet.com/sales',
-      url: 'https://www.saintstephenstreet.com/sales',
+      url: 'http://localhost:8080/',
+      url: 'https://mprealestate.herokuapp.com/',
+      //url: 'http://www.hemenwayst.com/',
+      //url: 'http://www.symphonyroad.com/',
+      //url: 'http://www.gainsboroughstreet.com/',
+      //url: 'http://www.saintstephenstreet.com/',
       success: function(data) {
 
 
