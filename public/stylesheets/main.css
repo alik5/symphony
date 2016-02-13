@@ -70,7 +70,7 @@
 }
 
 #blue {
-    background-color: #000080;
+    background-color: #00A651;
     color: white;
 }
 
@@ -114,8 +114,7 @@ a:active {
 .page-header h1 {
     font-size: 4em; 
     text-align: center; 
-    color: #404040;
- 
+    color: #fff;
 }
 
 .page-header h4 {
@@ -137,6 +136,7 @@ h3 {
 .page-header {
 	
 	font-family: 'Montserrat', sans-serif; 
+    color: #fff;
 }
 
 .heading {
@@ -339,8 +339,9 @@ border-radius:20px;
 }
 
 .strings {
-        background: url('../images/Basics.png') no-repeat center center;
+        background: url('../images/longgains.png') no-repeat center center;
         background-size: cover!important;
+        height: 40%; 
         }
 
 .circle {

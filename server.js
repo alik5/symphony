@@ -95,7 +95,6 @@ app.get('/hemenway', function(req, response) {
 });
 
 app.get('/hemenway_sales', function(req, res) {
-  var res = response;
   res.render('hemenway_sales');
 
 });
@@ -131,7 +130,6 @@ app.get('/gainsborough', function(req, response) {
 });
 
 app.get('/gainsborough_sales', function(req, res) {
-  var res = response;
   res.render('gainsborough_sales');
 });
 
@@ -198,7 +196,6 @@ app.get('/symphony', function(req, response) {
 });
 
 app.get('/symphony_sales', function(req, res) {
-  var res = response;
   res.render('symphony_sales');
 });
 
@@ -232,8 +229,7 @@ app.get('/stephen', function(req, response) {
   });
 });
 
-app.get('/stephen_sales', function(req, response) {
-  var res = response;
+app.get('/stephen_sales', function(req, res) {
   res.render('stephen_sales');
 });
 
