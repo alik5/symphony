@@ -2,7 +2,7 @@
 @media only screen and (min-width : 320px) {
 
        .jumbotron {
-        background: url('../images/boston-blue.png') no-repeat center center;
+        background: url('../images/bostonbackdrop.png') no-repeat center center;
         background-size: cover!important;
         }
 
@@ -16,7 +16,7 @@
     @media only screen and (min-width : 480px) {
 
         .jumbotron {
-        background: url('../images/boston-blue.png') no-repeat center center;
+        background: url('../images/bostonbackdrop.png') no-repeat center center;
         background-size: cover!important;
         }
 
@@ -29,7 +29,7 @@
     /* Small Devices, Tablets */
     @media only screen and (min-width : 768px) {
         .jumbotron {
-        background: url('../images/boston-blue.png') no-repeat center center;
+        background: url('../images/bostonbackdrop.png') no-repeat center center;
         height: 85%;
         position: relative;
         width: 100%;
@@ -42,7 +42,7 @@
     /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
         .jumbotron {
-        background: url('../images/street_1.png') no-repeat center center;
+        background: url('../images/bostonbackdrop.png') no-repeat center center;
         height: 85%;
         position: relative;
         width: 100%;
@@ -56,7 +56,7 @@
     @media only screen and (min-width : 1200px) {
 
     .jumbotron {
-        background: url('../images/street_1.png') no-repeat center center;
+        background: url('../images/bostonbackdrop.png') no-repeat center center;
         height: 85%;
         position: relative;
         width: 100%;
@@ -81,10 +81,11 @@
 
 .left {
     text-align: left; 
+    color: #00BD92;
 }
 
 .placeholder {
-    color: #816687;
+    color: #00BD92;;
 }
 
 .placeholder a {
@@ -94,11 +95,11 @@
 }
 
 a:link {
-    color: #816687;
+    color: #00BD92;
 }
 
 a:visited {
-    color: #816687;
+    color: #00BD92;
 }
 
 a:active {
@@ -207,7 +208,7 @@ h3 {
 ul {
 	list-style: none; 
 	text-align: left; 
-	font-weight: 1.5em; 
+	font-weight: 1.5em;
 }
 
 ul li {
@@ -341,6 +342,11 @@ border-radius:20px;
         background: url('../images/Basics.png') no-repeat center center;
         background-size: cover!important;
         }
+
+.circle {
+    border-radius: 50%;
+    width: 75%; 
+}
 
 
 
