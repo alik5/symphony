@@ -2,27 +2,42 @@
 $(window).load(function() {
 
 
+  $('.beds').each(function() {
+    var numofBedsR = $(this).text();
+    var beds = ($(numofBedsR).html($.trim(numofBedsR)));
+    console.log(numofBedsR);
+    $('.beds').addClass(numofBedsR);
+  });
 
-  $('.dropdown-menu a').on('click', function(e, urlA) {
-    var urlA = window.location.href;
-    console.log(urlA);
-    var listingId = $(e.currentTarget).parent()[0].id;
-    var url = console.log(listingId);
-    $.ajax({
-      type: 'GET',
-      data: {
-        listingId: listingId
-      },
-      url: urlA,
-      success: function(data) {
-        JSON.parse('{"Beds": 0}', function(k, v) {
-          if (k === '') {
-            return v;
-          } // if topmost value, return it,
-          return v * 2; // else return v * 2.
-        });
-      }
-    })
+
+
+
+  $('.swatch').hover(function() {
+    $('.swatch .section-body').addClass('magictime tinLeftIn');
+  });
+
+  $('.swatch-white').hover(function() {
+    $('.swatch-white .section-body').addClass('magictime tinRightIn');
+  });
+
+  $('.swatch3').hover(function() {
+    $('.swatch3 .section-body').addClass('magictime tinLeftIn');
+  });
+
+
+
+
+
+
+
+
+  $('.dropdown-menu a').on('click', function(e) {
+    var numofBedsR = $(e.currentTarget).text();
+
+    $(".beds").addClass(numofBedsR);
+
+    $(".placeholder").filter("beds 2 Bed").css("background-color", "red");
+
   });
 
 

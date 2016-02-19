@@ -79,27 +79,23 @@
     color: #ffffff;
 }
 
-.left {
-    text-align: left; 
-    color: #000000;
-}
-
 .placeholder {
     color: #000000;
+    text-align: center;
 }
 
 .placeholder a {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	background-color: rgba(255, 255, 255, 0.6);
-	text-align: center;
+	text-align: left;
 }
 
 a:link {
-    color: #00BD92;
+    color: #C06058;
 }
 
 a:visited {
-    color: #00BD92;
+    color: #000;
 }
 
 a:active {
@@ -127,9 +123,10 @@ a:active {
 
 
 h3 {
-	text-align: center;
-	font-family: 'Montserrat', sans-serif; 
+	text-align: left;
+	font-family: 'Cabin', sans-serif; 
 	margin-top: -10px;
+    font-weight: bold;
 }
 
 
@@ -351,8 +348,82 @@ border-radius:20px;
 
 .margin {
     margin-top: 17px; 
-    margin-left: 15px; 
+    margin-left: -65px; 
+    
 }
+
+.swatch {
+    margin-top: 20px; 
+    background-color: #C06058;
+}
+
+.swatch3 {
+    margin-top: 20px; 
+    background-color: #00A38C; 
+
+}
+
+.swatch3 img {
+    width: 100%;
+    border-radius: 15px;  
+    border-color: #fff;
+    border-style: solid; 
+    border-width: 6px; 
+}
+
+.swatch img {
+    width: 100%;
+    border-radius: 15px;  
+    border-color: #fff;
+    border-style: solid; 
+    border-width: 6px; 
+}
+
+.section-header{
+    color: #fff;
+    font-size: 1.9em;
+    text-align: center; 
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+}
+
+.section-header-2 {
+    color: #C06058;
+    font-size: 1.9em;
+    text-align: center; 
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+}
+
+.section-body {
+    margin-top: 15px; 
+    margin-bottom: 15px; 
+}
+
+.swatch-white {
+    background-color: #F0F0F0;
+}
+
+.swatch-white img {
+    width: 100%;
+    border-radius: 15px;  
+    border-color: #C06058;
+    border-style: solid; 
+    border-width: 6px; 
+}
+
+.itemz div {
+    text-align: left; 
+}
+
+.left {
+    font-size: 1.8em; 
+}
+
+.about h3 {
+    text-align: center; 
+}
+
 
 
 
