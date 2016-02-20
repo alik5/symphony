@@ -5,9 +5,10 @@ $(window).load(function() {
   $('.beds').each(function() {
     var numofBedsR = $(this).text();
     var beds = ($(numofBedsR).html($.trim(numofBedsR)));
-    console.log(numofBedsR);
+    //console.log(numofBedsR);
     $('.beds').addClass(numofBedsR);
   });
+
 
 
 
@@ -24,21 +25,43 @@ $(window).load(function() {
     $('.swatch3 .section-body').addClass('magictime tinLeftIn');
   });
 
+  $('.dropdown-menu a').on('click', function(e, element) {
 
+    var text = $(this).text();
+    console.log(text);
+    if ($(this).text() === "3+ Bed") {
+      console.log("is 3");
+      var list = tinysort('div#ulx>div', {
+        data: 'beds',
+        order: 'desc'
+      });
 
+    } else if ($(this).text() === "2 Bed") {
+      console.log("is 2");
+      var list = tinysort('div#ulx>div', {
+        data: 'beds',
+        order: 'desc'
+      });
 
+    } else {
+      console.log('not3');
+      var list = tinysort('div#ulx>div', {
+        data: 'beds'
 
+      });
 
+    }
 
-
-  $('.dropdown-menu a').on('click', function(e) {
-    var numofBedsR = $(e.currentTarget).text();
-
-    $(".beds").addClass(numofBedsR);
-
-    $(".placeholder").filter("beds 2 Bed").css("background-color", "red");
 
   });
+
+  // Takes in a list of sorted divs
+  var renderListings = function(list) {
+    // Clear out the parent div holding the existing list
+    $('.itemz').empty();
+    console.log("appending list");
+    $('.itemz').append(list);
+  };
 
 
   $('#preloader_4')

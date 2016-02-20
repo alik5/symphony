@@ -1,20 +1,31 @@
+				<div class="dropdown">
+  				<button  id="blue" class="btn dropdown-toggle" type="button" data-toggle="dropdown">Sort by featured
+  				<span class="caret"></span></button>
+  					<ul class="dropdown-menu">
+    					<li><a href="#">Studio</a></li>
+    					<li><a href="#">1 Bed</a></li>
+    					<li><a href="#">2 Bed</a></li>
+    					<li><a href="#">3+ Bed</a></li>
+  					</ul>
+			</div>	
 	
 	<div class="row hidden">
-			<div class="col-md-10 col-md-offset-1 itemz">
+			<div class="col-md-10 col-md-offset-1 itemz" id="ulx">
 			{{#each listings}}
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 placeholder bordered" data-toggle="modal" data-target="#myModal-{{ID}}" id="{{ID}}">
+				<div data-beds={{decimal Beds}}><div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 placeholder bordered" data-toggle="modal" data-target="#myModal-{{ID}}" id="{{ID}}">
 				{{#Photos}}
 					<img class="img-responsive listing" alt="Generic placeholder thumbnail" src="{{Photo}}">
 	  				{{else}}
 	  				<img class="img-responsive bordered" alt="Generic placeholder thumbnail" src="https://static.wixstatic.com/media/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg/v1/fill/w_1936,h_632,al_c,q_85,usm_0.66_1.00_0.01/9e4b18_cb3d6f3f8ec54a33976b15b266b69c88.jpg">
 	  			{{/Photos}}
+	  			
 				<div><b class="desc">{{StreetNumber}} {{StreetName}}</b></div>
 				<div><b class="desc">${{Price}}</b></div>
 				<div class="beds"><b class="desc">{{decimal Beds}} Bed</b></div>
 				<div><b class="desc">{{decimal Baths}} Bath</b></div>
 				<div><b class="desc">Available: {{AvailableDate}}</b></div>
-
 	  		</div>
+		</div>
 	  		<div class="modal fade" id="myModal-{{ID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   				<div class="modal-dialog" role="document">
    				 	<div class="modal-content">
@@ -44,7 +55,7 @@
 							
       					</div>
             		</div>
-            			<div class="align-middle"><a href="mailto:mike@bhrboston.com"><button type="button" class="btn btn-default"><i class="fa fa-envelope-o fa-fw"></i> For More Info</button></a></div>
+            			<div id="align-middle"><a href="mailto:mike@bhrboston.com"><button type="button" class="btn btn-default"><i class="fa fa-envelope-o fa-fw"></i> For More Info</button></a></div>
       				<div class="modal-footer">
       					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
      				</div>								  
