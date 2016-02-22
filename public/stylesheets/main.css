@@ -507,6 +507,22 @@ a.trans:hover {
     padding-right: 10%;
 }
 
+  @media only screen and (max-width : 480px) {
+
+       .right-align {
+        display: none;
+       }
+
+       .page-header h4 {
+        display: none;
+       }
+
+       .page-header h1 {
+        font-size: 1.5em; 
+       }
+
+    }
+
 
 
 
