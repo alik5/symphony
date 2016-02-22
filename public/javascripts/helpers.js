@@ -2,12 +2,15 @@
 $(window).load(function() {
 
 
+
+
   $('.beds').each(function() {
     var numofBedsR = $(this).text();
     var beds = ($(numofBedsR).html($.trim(numofBedsR)));
     //console.log(numofBedsR);
     $('.beds').addClass(numofBedsR);
   });
+
 
 
 
