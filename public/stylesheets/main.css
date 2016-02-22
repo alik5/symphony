@@ -521,6 +521,16 @@ a.trans:hover {
         font-size: 1.5em; 
        }
 
+       .trans h3 {
+        text-align: center; 
+        font-weight: bold; 
+       }
+
+       .thumb img {
+        text-align: center; 
+        margin-left: 25px; 
+       }
+
     }
 
 
