@@ -386,7 +386,7 @@ border-radius:20px;
 }
 
 .swatch3 img {
-    width: 100%;
+    width: 75%;
     border-radius: 15px;  
     border-color: #fff;
     border-style: solid; 
@@ -394,11 +394,11 @@ border-radius:20px;
 }
 
 .swatch img {
-    width: 100%;
+    width: 75%;
     border-radius: 15px;  
     border-color: #fff;
     border-style: solid; 
-    border-width: 6px; 
+    border-width: 6px;
 }
 
 .section-header{
@@ -407,6 +407,7 @@ border-radius:20px;
     text-align: center; 
     font-family: 'Cabin', sans-serif;
     font-weight: 700;
+    margin-bottom: 25px; 
 }
 
 .section-header-2 {
@@ -422,6 +423,22 @@ border-radius:20px;
     margin-bottom: 15px; 
 }
 
+.section-text {
+    margin-top: 15px; 
+    color:white;
+    font-family: 'Lora', serfif; 
+}
+
+.section-text-white {
+    margin-top: 15px; 
+    color: #C06058;
+    font-family: 'Lora', serfif; 
+}
+
+.section-img {
+    text-align: center; 
+}
+
 .swatch-white {
     background-color: #F0F0F0;
 }
@@ -432,6 +449,15 @@ border-radius:20px;
     border-color: #C06058;
     border-style: solid; 
     border-width: 6px; 
+}
+
+.icons-white h4 {
+    color: #C06058;
+    font-family: 'Lora', serif;
+    }
+
+.icons-white.section-header {
+    margin-top: 10%; 
 }
 
 .itemz div {
@@ -448,6 +474,37 @@ border-radius:20px;
 
 a.trans:hover {
     color: #00BD92;
+}
+
+.icons img {
+    border-style: none; 
+     
+}
+
+.icons h4 {
+    font-family: 'Lora', serif;
+    color: #fff;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 1.4em;  
+}
+
+.ten {
+    margin-bottom: 10px; 
+    list-style: none; 
+}
+
+.section-list {
+    padding-top: -10px;
+    margin-bottom: 10px; 
+}
+
+.lefty{
+    text-align: left; 
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 
