@@ -55,7 +55,7 @@ var request = require('request');
 
 
 
-app.get('/', function(req, res) {
+app.get('/streets', function(req, res) {
 
 
 
@@ -199,7 +199,7 @@ app.get('/symphony_sales', function(req, res) {
   res.render('symphony_sales');
 });
 
-app.get('/stephen', function(req, response) {
+app.get('/', function(req, response) {
   var key = process.env.KEY;
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + key + '&street_name=stephen&include_mls=1';
   var res = response;
