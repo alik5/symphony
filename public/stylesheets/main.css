@@ -534,6 +534,16 @@ a.trans:hover {
     }
 
 
+.footer-icons {
+    margin: 20px; 
+    color: #00A38C;
+}
+
+.footer-icons i {
+    padding-left: 15px; 
+}
+
+
 
 
 
