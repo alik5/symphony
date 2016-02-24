@@ -199,7 +199,7 @@ app.get('/symphony_sales', function(req, res) {
   res.render('symphony_sales');
 });
 
-app.get('/', function(req, response) {
+app.get('/stephen', function(req, response) {
   var key = process.env.KEY;
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + key + '&street_name=stephen&include_mls=1';
   var res = response;
@@ -210,7 +210,7 @@ app.get('/', function(req, response) {
       parseString(body, function(err, result) {
         if (result.YGLResponse.Total != 0 && result.YGLResponse.Total !== undefined) {
           console.log(result.YGLResponse.Listings[0].Listing[6]);
-          res.render('symphony', {
+          res.render('stpehen', {
             helpers: {
               decimal: function(Beds, Baths) {
 
