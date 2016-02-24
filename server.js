@@ -165,7 +165,7 @@ app.post('/', function(req, response) {
 
 
 
-app.get('/symphony', function(req, response) {
+app.get('/', function(req, response) {
   var key = process.env.KEY;
   var url = 'https://www.yougotlistings.com/api/rentals/search.php?key=' + key + '&street_name=symphony&include_mls=1';
   var res = response;
@@ -300,10 +300,6 @@ app.post('/contact', function(req, res, next) {
     });
   res.render('listings')
 });
-
-
-
-
 
 
 
